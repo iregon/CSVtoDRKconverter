@@ -13,9 +13,7 @@ int main(int argc, char** argv) {
 	#ifndef DEVELOP
 	test_information_t test_info;
 	files_information_t files_info;
-	#endif
-	
-	#ifdef DEVELOP
+	#else
 	date_t date_debug = {11, 2, 20}; 
 	time_td time_debug = {10, 9, 40};
 	
@@ -23,7 +21,7 @@ int main(int argc, char** argv) {
 		"test",
 		"Mugello",
 		"SRT20",
-		"Matteo Indraccolo",
+		"John Doe",
 		"",
 		date_debug,
 		time_debug,
@@ -37,7 +35,6 @@ int main(int argc, char** argv) {
 	};
 	#endif
 	
-	char** output_content = NULL;
 	char output_content_header[DRK_HEADER_SIZE];
 	char output_content_test_info[DRK_TEST_INFO_SIZE];
 	
