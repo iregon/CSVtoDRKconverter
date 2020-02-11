@@ -1,5 +1,6 @@
 language: c
 
-compiler:
-  - clang
-  - gcc
+script:
+  - clang -coverage -O0 src/main.c -o main
+  - ./main
+  - gcov main.c
