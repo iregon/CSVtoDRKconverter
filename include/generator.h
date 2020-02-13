@@ -1,8 +1,10 @@
 #ifndef GENERATOR_H
 #define GENERATOR_H
 
+#include<stdio.h>
+
 #define DRK_HEADER_SIZE 1088
-#define DRK_TEST_INFO_SIZE 1056
+#define DRK_TEST_INFO_SIZE 1184
 
 struct date {
 	int day;
@@ -44,8 +46,15 @@ struct files_information {
 
 typedef struct files_information files_information_t;
 
+struct measure {
+	char name[20];
+	char type[5];
+};
+
 void generate_header(char out[], files_information_t files_info, test_information_t test_info);
 void generate_test_info(char out[], files_information_t files_info, test_information_t test_info);
+void generate_measures(char out[], FILE* csv_file);
+
 void format_date_usa(char date[8], int day, int month, int year);
 void format_time(char time[8], int hour, int minutes, int seconds);
 

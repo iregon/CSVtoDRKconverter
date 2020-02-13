@@ -101,6 +101,10 @@ void generate_test_info(char out[], files_information_t files_info, test_informa
 	out[1043] = 2;
 }
 
+void generate_measures(char out[], FILE* csv_file) {
+	
+}
+
 void format_date_usa(char date[8], int day, int month, int year) {
 	char month_string[2]; 
 	itoa(month, month_string, 10);
